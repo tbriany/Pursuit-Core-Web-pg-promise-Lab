@@ -1,10 +1,8 @@
 const express = require('express');
 
-const pgp = require('pg-promise')();
-const connectionString = "postgres://localhost:5432/pg_promise_db"
-const db = pgp(connectionString)
-
 const router = express.Router();
+
+const db = require('./database');
 
 // ES5 method of dealing with promises
 // router.get('/', (req, res) => {
@@ -57,5 +55,6 @@ try {
     console.log(error)
 }
 })
+
 
 module.exports = router; 
